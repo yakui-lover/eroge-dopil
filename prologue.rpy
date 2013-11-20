@@ -32,8 +32,8 @@ label prologue:
     with fade3
 
     scene bg ext_camp_entrance_night 
-    show owl #TODO#
-
+    show owl :
+        pos (931, 88)
     show prologue_dream 
     with fade3
 
@@ -370,8 +370,8 @@ label opening:
 
     $ renpy.pause(2, hard=True)
 
-    show logo_day #TODO#
-
+    show logo_day :
+        pos (400,150)
     with dissolve2
 
     $ renpy.pause(2, hard=True)

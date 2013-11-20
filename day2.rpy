@@ -57,32 +57,32 @@ label day2_main1:
 
     window hide
 
-    scene cg d2_mirror #TODO#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    scene cg d2_mirror :
+        pause 0.5
+        linear 0.05 pos (-5,-5)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (5,5)
+        linear 0.05 pos (0,5)
+        linear 0.05 pos (5,0)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (-5,-5)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (5,5)
+        linear 0.05 pos (0,5)
+        linear 0.05 pos (5,0)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (-5,-5)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (5,5)
+        linear 0.05 pos (0,5)
+        linear 0.05 pos (5,0)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (-5,-5)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (5,5)
+        linear 0.05 pos (0,5)
+        linear 0.05 pos (5,0)
+        linear 0.05 pos (0,0)
     with dissolve
 
     window show
@@ -961,14 +961,14 @@ label day2_dinner:
     "Она не дала мне времени даже взять чашку, а сама моментально, одним глотком, выпила весь свой компот."
     window hide
 
-    show bg int_dining_hall_day #TODO#
-
-
-
-
-
-
-
+    show bg int_dining_hall_day :
+        linear 0.1 pos (-5,-5)
+        linear 0.1 pos (0,0)
+        linear 0.1 pos (5,5)
+        linear 0.1 pos (0,5)
+        linear 0.1 pos (5,0)
+        linear 0.1 pos (0,0)
+        repeat 10
 
     stop music fadeout 0
 
@@ -1439,11 +1439,11 @@ label day2_pre_cards:
     dv "Что, тоже планируешь участвовать в этой дурацкой игре?"
     me "Ну... да, а что такого?"
     dv "Да нет, ничего."
-    show dv smile pioneer at center  #TODO# with dspr
-
+    show dv smile pioneer at center   with dspr:
+        linear 0.5 xalign 0.72
     "Она уже собиралась уходить, но вдруг обернулась и внимательно посмотрела на меня, ухмыльнувшись."
-    show dv smile pioneer at right #TODO#
-
+    show dv smile pioneer at right :
+        linear 0.5 xalign 0.5
     dv "А в карты-то играть умеешь?"
     me "Ну-у...немного умею."
     "Я никак не мог понять, к чему она клонит."
@@ -1781,17 +1781,17 @@ label day2_cardgame:
 
 label demo_play:
     python:
-        dialogs = {(3, 'rival_select', 'call'):'demo_play_intro', (3, 'me_defend_1', 'call'):'demo_play_me_defend_1', (3, 'me_select_1', 'call'):'demo_play_me_select_1', (3, 'rival_defend', 'call'):'demo_play_rival_defend', (2, 'rival_select', 'jump'):'demo_play_after_loop'}
+        dialogs = {
+                        (3, 'rival_select', 'call'):'demo_play_intro', 
+                        (3, 'me_defend_1', 'call'):'demo_play_me_defend_1', 
+                        (3, 'me_select_1', 'call'):'demo_play_me_select_1', 
+                        (3, 'rival_defend', 'call'):'demo_play_rival_defend', 
+                        (2, 'rival_select', 'jump'):'demo_play_after_loop'
+                    }
         INVISIBLE = False
         VISIBLE = False
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUn(un_avatar_set, u"Пробная игра")
-
-
-
-
-
-
     jump cards_gameloop
 
 label demo_play_intro:
@@ -1934,13 +1934,13 @@ label day_2_cards_continue:
 
 label un_play:
     python:
-        dialogs = {(0, 'win', 'jump'):'un_play_win', (0, 'fail', 'jump'):'un_play_fail', (0, 'draw', 'jump'):'un_play_draw'}
+        dialogs = {
+                        (0, 'win', 'jump'):'un_play_win', 
+                        (0, 'fail', 'jump'):'un_play_fail', 
+                        (0, 'draw', 'jump'):'un_play_draw'
+                    }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUn(un_avatar_set, u"Лена")
-
-
-
-
     jump cards_gameloop
 
 
@@ -2029,16 +2029,16 @@ label un_play_win:
 
 label us_play:
     python:
-        dialogs = {(3, 'me_defend_2', 'call'):'us_play_me_defend_2', (2, 'me_defend_2', 'call'):'us_play_me_defend_2', (1, 'me_defend_2', 'call'):'us_play_me_defend_2', (0, 'win', 'jump'):'us_play_win', (0, 'fail', 'jump'):'us_play_fail', (0, 'draw', 'jump'):'us_play_draw'}
+        dialogs = {
+                        (3, 'me_defend_2', 'call'):'us_play_me_defend_2', 
+                        (2, 'me_defend_2', 'call'):'us_play_me_defend_2', 
+                        (1, 'me_defend_2', 'call'):'us_play_me_defend_2', 
+                        (0, 'win', 'jump'):'us_play_win', 
+                        (0, 'fail', 'jump'):'us_play_fail', 
+                        (0, 'draw', 'jump'):'us_play_draw'
+                    }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUs(us_avatar_set, u"Ульяна")
-
-
-
-
-
-
-
     jump cards_gameloop
 
 
@@ -2103,13 +2103,13 @@ label us_play_win:
 
 label us2_play:
     python:
-        dialogs = {(0, 'win', 'jump'):'us2_play_win', (0, 'fail', 'jump'):'us2_play_fail', (0, 'draw', 'jump'):'us2_play_draw'}
+        dialogs = {
+                        (0, 'win', 'jump'):'us2_play_win', 
+                        (0, 'fail', 'jump'):'us2_play_fail', 
+                        (0, 'draw', 'jump'):'us2_play_draw'
+                    }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUs(us_avatar_set, u"Ульяна II")
-
-
-
-
     jump cards_gameloop
 
 label us2_play_fail:
@@ -2141,7 +2141,6 @@ label us2_play_win:
     "Я внимательно посмотрел в сторону Электроника и схемы турнира, пытаясь установить, кто же мне достался в соперники по финалу."
     show dv normal pioneer at center   with dissolve
     "В ту же секунду ко мне за стол села Алиса."
-    
     if day2_dv_bet == 0:
         show dv angry pioneer at center   with dspr
         dv "Ты еще пожалеешь, что струсил."
@@ -2159,13 +2158,13 @@ label us2_play_win:
 
 label dv_play:
     python:
-        dialogs = {(0, 'win', 'jump'):'dv_play_win', (0, 'fail', 'jump'):'dv_play_fail', (0, 'draw', 'jump'):'dv_play_draw'}
+        dialogs = {
+                        (0, 'win', 'jump'):'dv_play_win', 
+                        (0, 'fail', 'jump'):'dv_play_fail', 
+                        (0, 'draw', 'jump'):'dv_play_draw'
+                    }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalDv(dv_avatar_set, u"Алиса")
-
-
-
-
     jump cards_gameloop
 
 label dv_play_draw:
@@ -2457,15 +2456,15 @@ label day2_dv:
 
     play music music_list["that_s_our_madhouse"] fadein 3
 
-    scene bg ext_beach_night #TODO#
-
-
-
-
-
-
-
-
+    scene bg ext_beach_night :
+        linear 0.05 pos (-5,-5)
+        linear 0.05 pos (0,0)
+        linear 0.05 pos (5,5)
+        linear 0.05 pos (0,5)
+        linear 0.05 pos (5,0)
+        linear 0.05 pos (0,0)
+        repeat
+        
     window hide
 
     play sound sfx_shoulder_dive_water
@@ -2521,11 +2520,11 @@ label day2_dv:
     dv "Походу ты не такой уж и неудачник…"
     window hide
 
-    scene cg d2_2ch_beach #TODO# with dissolve
-
-
-
-
+    scene cg d2_2ch_beach  with dissolve:
+        pos (0,-1920)
+        linear 10.0 pos (0,0)
+        linear 2.0 pos (0, -250)
+        
     window show
     "Ей все же удалось меня чуть удивить. Повернув голову в ее сторону, я обнаружил, что Алиса была одета в великолепно сидящий на ней оранжевый купальник, чертовски хорошо подчеркивающий ее природные данные."
     me "С чего это я неудачник?"
@@ -2926,34 +2925,34 @@ label day2_us:
 
     us "Ого!"
     "Голос доносился откуда-то сверху."
-    show us laugh pioneer #TODO# with dissolve
-
-
-
+    show us laugh pioneer  with dissolve:
+        xalign 0.5
+        yanchor 0.116
+        rotate 180
     "Я поднял глаза и увидел Ульянку, свесившуюся с балки под потолком сцены."
     us "Что это мы тут делаем?"
     me "Да не...я тут просто…"
     "Я беспомощно вздохнул. Оправдываться было бесполезно."
     me "Сама все видела."
     "Выдавил я и смущенно отвернулся."
-    show us laugh2 pioneer #TODO# with dspr
-
-
-
+    show us laugh2 pioneer  with dspr:
+        xalign 0.5
+        yanchor 0.116
+        rotate 180
     us "Да ты у нас великий гитарист!"
     "Я ничего не ответил."
-    show us smile pioneer #TODO# with dspr
-
-
-
+    show us smile pioneer  with dspr:
+        xalign 0.5
+        yanchor 0.116
+        rotate 180
     us "Ну, ладно тебе, не дуйся, смотрелось забавно!"
     "Она захихикала."
     "Хотелось провалиться сквозь землю."
     
-    show us grin pioneer #TODO# with dspr
-
-
-
+    show us grin pioneer  with dspr:
+        xalign 0.5
+        yanchor 0.116
+        rotate 180
     us "Подойди-ка сюда."
     me "Куда?"
     us "Ко мне!"

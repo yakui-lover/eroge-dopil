@@ -416,8 +416,8 @@ label day3_helpaccept:
     play music music_list["timid_girl"] fadein 5
 
     hide cs  with dissolve
-    show un shy pioneer at left #TODO#
-
+    show un shy pioneer at left :
+        linear 1.0 xalign 0.5
     "Я перевел взгляд на Лену, которая все так же сосредоточенно смотрела себе под ноги."
     "Мы молча пошли по дороге прочь от медпункта."
     window hide
@@ -1216,9 +1216,9 @@ label day3_main4:
     show mt rage pioneer at right   with dspr
     mt "И кто теперь все это должен убирать?!"
     "Не то, чтобы у меня не было предположений..."
-    show us surp3 sport at center  #TODO# with dspr
-
-
+    show us surp3 sport at center   with dspr:
+        linear 0.2 xalign 0.4
+        linear 0.2 xalign 0.5
     us "Он!"
     "Совершенно невозмутимо ответила Ульянка."
     me "...она?"
@@ -1229,11 +1229,11 @@ label day3_main4:
     mt "Семен, принеси швабры и совки из кладовки. Ульяна!"
     show mt rage pioneer at right   with dspr
     "Вожатая посмотрела на Ульяну таким взглядом, что на секунду мне даже стало ее жаль."
-    show us fear sport at center  #TODO# with dspr
-
-
-
-
+    show us fear sport at center   with dspr:
+        parallel:
+            linear 0.5 yalign -0.2
+        parallel:
+            linear 0.5 xalign 0.4
     mt "Тряпку в руки, и начинай собирать осколки посуды! Побыстрее!"
     "Ольга Дмитриевна отдышалась немного и продолжила:"
     show mt angry pioneer at right   with dspr

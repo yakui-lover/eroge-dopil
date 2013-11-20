@@ -249,8 +249,8 @@ label day1:
     "На ее ярко-красной майке гордо красовалась надпись «СССР»."
     th "У одной из них наверняка можно спросить направление."
     show un surprise pioneer far at left   with dspr
-    show us surp3 sport far at right  #TODO# with dspr
-
+    show us surp3 sport far at right   with dspr:
+        linear 1.0 xalign 0.28
     "Тем временем девчонка в красной майке подскочила к грустной девочке и, энергично жестикулируя, начала что-то бойко той рассказывать."
     show un shy pioneer far at left   with dspr
     "Та явно смутилась и ничего не ответив, потупила взгляд."
@@ -267,8 +267,8 @@ label day1:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_clubs_day 
-    show us grin sport at left  #TODO# with dspr
-
+    show us grin sport at left   with dspr:
+        linear 2.0 xalign 2.0
     with dissolve
 
     "Мелкая посмотрела на меня, хитро улыбнулась и побежала за ней."
@@ -554,8 +554,8 @@ label day1:
     mt "Ладненько, я побежала, а ты пока можешь осмотреть лагерь!{w} Вечером приходи на ужин, не забудь!"
     hide mt  with dissolve
     "С этими словами она вышла из домика."
-    show sl smile pioneer at right  #TODO# with dspr
-
+    show sl smile pioneer at right   with dspr:
+        linear 1.0 xalign 0.5
     "Я остался наедине со Славей."
     sl "Мне тоже пора – дела."
     sl "Ты походи, осмотрись.{w} Вечером увидимся."
