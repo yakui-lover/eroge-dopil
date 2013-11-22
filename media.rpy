@@ -1,4 +1,3 @@
-
 init -1000 python:
     config_session = False
     def get_image(file):
@@ -377,8 +376,8 @@ init:
 
 
         $ store.names_list.append('th')
-        $ th_prefix = "~ "
-        $ th_suffix = " ~"
+        $ th_prefix = "«"
+        $ th_suffix = "»"
 
 
 
