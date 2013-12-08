@@ -5,7 +5,7 @@
     $ set_name('ug', u"Пионер")
     $ set_name('me',u"Семён")
 
-label v17_day1:
+label v17_v17_day1:
 
     $ backdrop = 'days'
 
@@ -418,7 +418,7 @@ label v17_day1:
             "Пионеров и след простыл: все разбежались с аллейки, как будто никого тут и не было.{w} Остался один я стоять на широком чёрном пятне, впитавшемся в дорожку."
             th "Та девочка сказала повернуть налево, кажется..."
             "И я пошёл, сняв пальто, чтобы выжать из него воду."
-            jump v17_mt_pioneer_form
+            jump v17_ v17_mt_pioneer_form
         "Попытаться забороть":
             "Наверно, я был сумасшедшим."
             "С этой девчонкой не справиться так легко, нужно брать хитростью."
@@ -460,9 +460,9 @@ label v17_day1:
             th "Хм, всё чревато тёмной, когда в отместку начинают лупить спящего, как в армии. Я видел это в  «Цельнометаллической оболочке»."
             th "Погодите, а с какой стати я буду тут ночевать? Ну уж нет. Шиш вам."
             "Ноги сами вели меня куда-то вперёд..."
-            jump v17_boathouse_meeting
+            jump v17_ v17_boathouse_meeting
 
-label v17_boathouse_meeting:
+label v17_v17_boathouse_meeting:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_boathouse_day 
@@ -516,9 +516,9 @@ label v17_boathouse_meeting:
 
     window hide
     
-    jump v17_sl_mt_house
+    jump v17_ v17_sl_mt_house
     
-label v17_mt_pioneer_form:
+label v17_v17_mt_pioneer_form:
     $ persistent.sprite_time = 'day'
     scene bg ext_square_day 
     with dissolve
@@ -702,11 +702,11 @@ label v17_mt_pioneer_form:
     th "Ну после такого совсем нет желания куда-либо идти. Но на солнце голова быстрей высохнет, плюс удастся кого-то расспросить о лагере."
     menu:
         "Остаться в домике до вечера":
-            jump v17_day1_sitting_home
+            jump v17_ v17_day1_sitting_home
         "Прогуляться в лагере":
-            jump v17_day1_camp_walk
+            jump v17_ v17_day1_camp_walk
 
-label v17_sl_mt_house:
+label v17_v17_sl_mt_house:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_square_day 
@@ -862,9 +862,9 @@ label v17_sl_mt_house:
     
     stop music fadeout 5
     
-    jump v17_day1_camp_walk
+    jump v17_ v17_day1_camp_walk
 
-label v17_day1_camp_walk:
+label v17_v17_day1_camp_walk:
 
     th "Возможно, стоит попытаться расспросить кого-то ещё."
     window hide
@@ -1012,7 +1012,7 @@ label v17_day1_camp_walk:
                         "Она круто развернулась и ушла в столовую."
                         hide dv  with dissolve
                         th "Как быстро она перестала злиться, сразу после возникшей перспективы снова показать своё превосходство...{w} Нет, всё прямо как в детстве."
-                        jump d1_free_time
+                        jump v17_ v17_d1_free_time
                     "Соврать":
                         init:
                             $ d1_kr_hate_raised = True #TODO Этот ответ прибавит шанс на бэд-энд с Криппи-тян. Ложь действует на личность Алисы в виде Криппи как стресс. Навеяно анимцой Бакемоногатари.
@@ -1025,7 +1025,7 @@ label v17_day1_camp_walk:
                         "Она ушла, оборвав разговор на печальной ноте."
                         "Не знаю, надо ли жалеть об этом. Наверно, мы просто не из тех, кто может легко ужиться между собой."
                         th "К чему мысли об этом?{w} Ни с кем уживаться я не собирался. Чем раньше свалю отсюда, тем лучше."
-                        jump d1_free_time
+                        jump v17_ v17_d1_free_time
             dv "А с тобой я ещё поговорю!"
             me "М-м... Просто не забудь в следующий раз рубашку заправить, тогда, может быть, обосрамс не повторится."
             show dv shy pioneer2 at left   with dissolve
@@ -1063,7 +1063,7 @@ label v17_day1_camp_walk:
 
             hide dv  with dissolve
 
-label d1_free_time:
+label v17_v17_d1_free_time:
 
     "..." #TODO Нейтральный ивент. Возможно, свободное перемещение по карте.
     window hide
@@ -1098,15 +1098,15 @@ label d1_free_time:
         "Мрачно сказал я."
         us "А я Ульяна!"
         $ meet('us', u"Ульяна")
-        jump d1_us_dialogue_part2
+        jump v17_ v17_d1_us_dialogue_part2
     th "Девочка...{w} Ульяна!"
     th "Ну, этого стоило ожидать."
     "Я стоял достаточно далеко от поля, но Ульяна всё же заметила меня."
     show us laugh sport far at center    with dissolve   
     us "Эй, ты!"
-    jump d1_us_dialogue_part2
+    jump v17_ v17_d1_us_dialogue_part2
     
-label d1_us_dialogue_part2:
+label v17_v17_d1_us_dialogue_part2:
 
     us "Играть будешь?"
     "Я не знал, что ответить."
@@ -1512,11 +1512,11 @@ label d1_us_dialogue_part2:
     me "Ну, я даже не знаю..."
     if d1_dv_punishment:
         th "Так себе денёк. Не из приятных."
-        jump d1_sl_dialogue_part2
+        jump v17_ v17_d1_sl_dialogue_part2
     th "Сегодняшний день не был шибко плохим. На самом деле, всё происходящее вокруг меня...{w} радовало?"
-    jump d1_sl_dialogue_part2
+    jump v17_ v17_d1_sl_dialogue_part2
 
-label d1_sl_dialogue_part2:   
+label v17_v17_d1_sl_dialogue_part2:   
     sl "Ничего, скоро привыкнешь!"
 
     show cg d1_sl_dinner  with dspr
@@ -1772,7 +1772,7 @@ label d1_sl_dialogue_part2:
         "Пару минут спустя я сказал в темноту:"
         me "Доброй ночи, Ольга Дмитриевна."
         mt "И тебе доброй ночи."
-        jump v17_day1_dreaming
+        jump v17_ v17_day1_dreaming
     "Я задумался на мгновение."
     me "Но ты-то не против?"
     show mt surprise pioneer at center   with dspr
@@ -1801,9 +1801,9 @@ label d1_sl_dialogue_part2:
     window hide
 
     stop music fadeout 5
-    jump v17_day1_dreaming
+    jump v17_ v17_day1_dreaming
 
-label v17_day1_sitting_home:
+label v17_v17_day1_sitting_home:
     $ persistent.sprite_time = 'day'
     scene bg int_house_of_mt_noitem_day 
     with dissolve
@@ -1838,9 +1838,9 @@ label v17_day1_sitting_home:
     stop ambience
     window hide
 
-    jump v17_day2_main1
+    jump v17_ v17_day2_main1
 
-label v17_day1_dreaming:
+label v17_v17_day1_dreaming:
 
     scene bg black 
     with fade2
@@ -1915,4 +1915,4 @@ label v17_day1_dreaming:
 
     $ renpy.pause(3)
 
-    jump v17_day2_main1
+    jump v17_ v17_day2_main1
