@@ -1,11 +1,12 @@
-﻿init:
+﻿init 2:
     $ day2_map_necessary_done = 0
     $ day2_cards_with_sl = 0
     $ day2_dv_bet = 0
     $ day2_un = 0
     $ d2_gave_keys = False
+    $ set_name('me',u"Семён")
 
-label day2_main1:
+label v17_day2_main1:
 
     $ backdrop = 'days'
 
@@ -414,25 +415,25 @@ label day2_main1:
 
     $ disable_all_zones()
 
-    $ set_zone('music_club', 'day2_musclub')
-    $ set_zone('clubs', 'day2_clubs')
-    $ set_zone('library', 'day2_library')
-    $ set_zone('medic_house', 'day2_aidpost')
-    $ set_zone('dining_hall', 'day2_dinner')
+    $ set_zone('music_club', 'v17_day2_musclub')
+    $ set_zone('clubs', 'v17_day2_clubs')
+    $ set_zone('library', 'v17_day2_library')
+    $ set_zone('medic_house', 'v17_day2_aidpost')
+    $ set_zone('dining_hall', 'v17_day2_dinner')
 
-    jump day2_map
+    jump v17_day2_map
 
-label day2_map:
+label v17_day2_map:
 
     if day2_map_necessary_done == 5:
-        jump day2_main2
+        jump v17_day2_main2
     if day2_map_necessary_done == 2:
         $ reset_zone('dining_hall')
         $ day2_map_necessary_done += 1
 
     $ show_map()
 
-label day2_musclub:
+label v17_day2_musclub:
 
     play ambience ambience_camp_center_day fadein 3
 
@@ -556,9 +557,9 @@ label day2_musclub:
 
     $ disable_current_zone()
     $ day2_map_necessary_done += 1
-    jump day2_map
+    jump v17_day2_map
 
-label day2_clubs:
+label v17_day2_clubs:
 
     play ambience ambience_camp_center_day fadein 2
 
@@ -652,9 +653,9 @@ label day2_clubs:
 
     $ disable_current_zone()
     $ day2_map_necessary_done += 1
-    jump day2_map
+    jump v17_day2_map
 
-label day2_library:
+label v17_day2_library:
 
     play ambience ambience_camp_center_day fadein 3
     $ persistent.sprite_time = 'day'
@@ -756,9 +757,9 @@ label day2_library:
 
     $ disable_current_zone()
     $ day2_map_necessary_done += 1
-    jump day2_map
+    jump v17_day2_map
 
-label day2_aidpost:
+label v17_day2_aidpost:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_aidpost_day 
@@ -858,9 +859,9 @@ label day2_aidpost:
 
     $ disable_current_zone()
     $ day2_map_necessary_done += 1
-    jump day2_map
+    jump v17_day2_map
 
-label day2_dinner:
+label v17_day2_dinner:
 
     $ lp_us = (lp_us) + (1)
 
@@ -969,7 +970,6 @@ label day2_dinner:
         linear 0.1 pos (5,0)
         linear 0.1 pos (0,0)
         repeat 10
-
     stop music fadeout 0
 
     show us fear pioneer at center   with dspr
@@ -992,9 +992,9 @@ label day2_dinner:
     window hide
 
     $ disable_current_zone()
-    jump day2_map
+    jump v17_day2_map
 
-label day2_main2:
+label v17_day2_main2:
 
     scene black 
     with dissolve2
@@ -1204,11 +1204,11 @@ label day2_main2:
         "Пойти за картами со Славей":
             $ day2_cards_with_sl = 1
             $ lp_sl = (lp_sl) + (1)
-            jump day2_cards_with_sl
+            jump v17_day2_cards_with_sl
         "Пойти одному":
-            jump day2_cards_without_sl
+            jump v17_day2_cards_without_sl
 
-label day2_cards_with_sl:
+label v17_day2_cards_with_sl:
 
     window show
     "Я не смог сдержать довольную улыбку."
@@ -1308,9 +1308,9 @@ label day2_cards_with_sl:
     show mt smile pioneer at cright   with dspr
     mt "Ну и отлично!"
 
-    jump day2_pre_cards
+    jump v17_day2_pre_cards
 
-label day2_cards_without_sl:
+label v17_day2_cards_without_sl:
 
     window show
     show sl normal pioneer at right   with dspr
@@ -1418,9 +1418,9 @@ label day2_cards_without_sl:
     "Я посмотрел на Славю, она виновато улыбнулась."
     th "Эх, если бы я только мог заглянуть внутрь ящика..."
 
-    jump day2_pre_cards
+    jump v17_day2_pre_cards
 
-label day2_pre_cards:
+label v17_day2_pre_cards:
 
     hide mt 
     hide sl 
@@ -1439,10 +1439,10 @@ label day2_pre_cards:
     dv "Что, тоже планируешь участвовать в этой дурацкой игре?"
     me "Ну... да, а что такого?"
     dv "Да нет, ничего."
-    show dv smile pioneer at center   with dspr:
+    show dv smile pioneer at center with dspr:
         linear 0.5 xalign 0.72
     "Она уже собиралась уходить, но вдруг обернулась и внимательно посмотрела на меня, ухмыльнувшись."
-    show dv smile pioneer at right :
+    show dv smile pioneer at right:
         linear 0.5 xalign 0.5
     dv "А в карты-то играть умеешь?"
     me "Ну-у...немного умею."
@@ -1549,7 +1549,7 @@ label day2_pre_cards:
     "Я тяжело вздохнул и направился за ней в столовую."
     window hide
 
-label day2_cards:
+label v17_day2_cards:
 
     $ persistent.sprite_time = 'sunset'
     scene bg int_dining_hall_sunset 
@@ -1775,18 +1775,18 @@ label day2_cards:
     un "Да."
     "Некоторое время мы просидели в неловком молчании."
 
-label day2_cardgame:
+label v17_day2_cardgame:
 
     "Вскоре Электроник начал объяснять правила."
 
-label demo_play:
+label v17_demo_play:
     python:
         dialogs = {
-                        (3, 'rival_select', 'call'):'demo_play_intro', 
-                        (3, 'me_defend_1', 'call'):'demo_play_me_defend_1', 
-                        (3, 'me_select_1', 'call'):'demo_play_me_select_1', 
-                        (3, 'rival_defend', 'call'):'demo_play_rival_defend', 
-                        (2, 'rival_select', 'jump'):'demo_play_after_loop'
+                        (3, 'rival_select', 'call'):'v17_demo_play_intro', 
+                        (3, 'me_defend_1', 'call'):'v17_demo_play_me_defend_1', 
+                        (3, 'me_select_1', 'call'):'v17_demo_play_me_select_1', 
+                        (3, 'rival_defend', 'call'):'v17_demo_play_rival_defend', 
+                        (2, 'rival_select', 'jump'):'v17_demo_play_after_loop'
                     }
         INVISIBLE = False
         VISIBLE = False
@@ -1794,7 +1794,7 @@ label demo_play:
         rival = CardGameRivalUn(un_avatar_set, u"Пробная игра")
     jump cards_gameloop
 
-label demo_play_intro:
+label v17_demo_play_intro:
     show el normal pioneer at center   with dissolve
     $ show_cards()
     el "Посмотрите на карты внимательно."
@@ -1850,7 +1850,7 @@ label demo_play_intro:
 
 
 
-label demo_play_me_defend_1:
+label v17_demo_play_me_defend_1:
     $ show_cards()
     window show
     "Но на середине стола ее рука застыла..."
@@ -1875,7 +1875,7 @@ label demo_play_me_defend_1:
 
 
 
-label demo_play_me_select_1:
+label v17_demo_play_me_select_1:
 
     window show
     "Понемногу все становилось понятно!{w} Или хотя бы понятнее..."
@@ -1888,7 +1888,7 @@ label demo_play_me_select_1:
 
 
 
-label demo_play_rival_defend:
+label v17_demo_play_rival_defend:
     $ show_cards()
     window show
     "Лена может попробовать защитить свою карту."
@@ -1899,17 +1899,17 @@ label demo_play_rival_defend:
 
 
 
-label demo_play_after_loop:
+label v17_demo_play_after_loop:
     $ show_cards()
     window show
     "Получилось!"
     window hide
 
-    $ ui.jumpsoutofcontext('day_2_cards_continue')
+    $ ui.jumpsoutofcontext('v17_day_2_cards_continue')
 
 
 
-label day_2_cards_continue:
+label v17_day_2_cards_continue:
     $ persistent.sprite_time = 'day'
     scene bg int_dining_hall_day 
     with dissolve
@@ -1932,30 +1932,30 @@ label day_2_cards_continue:
     "И турнир начался."
     window hide
 
-label un_play:
+label v17_un_play:
     python:
         dialogs = {
-                        (0, 'win', 'jump'):'un_play_win', 
-                        (0, 'fail', 'jump'):'un_play_fail', 
-                        (0, 'draw', 'jump'):'un_play_draw'
+                        (0, 'win', 'jump'):'v17_un_play_win', 
+                        (0, 'fail', 'jump'):'v17_un_play_fail', 
+                        (0, 'draw', 'jump'):'v17_un_play_draw'
                     }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUn(un_avatar_set, u"Лена")
     jump cards_gameloop
 
 
-label un_play_fail:
+label v17_un_play_fail:
     $ day2_card_result = 0
-    jump day2_main3
+    jump v17_day2_main3
 
-label un_play_draw:
+label v17_un_play_draw:
     $ show_cards()
     window show
     el "Ничья! Играйте еще раз."
     window hide
-    jump un_play
+    jump v17_un_play
 
-label un_play_win:
+label v17_un_play_win:
     $ persistent.sprite_time = 'sunset'
     scene bg int_dining_hall_sunset 
     with dissolve
@@ -2027,22 +2027,22 @@ label un_play_win:
     hide us  with dissolve
     window hide
 
-label us_play:
+label v17_us_play:
     python:
         dialogs = {
-                        (3, 'me_defend_2', 'call'):'us_play_me_defend_2', 
-                        (2, 'me_defend_2', 'call'):'us_play_me_defend_2', 
-                        (1, 'me_defend_2', 'call'):'us_play_me_defend_2', 
-                        (0, 'win', 'jump'):'us_play_win', 
-                        (0, 'fail', 'jump'):'us_play_fail', 
-                        (0, 'draw', 'jump'):'us_play_draw'
+                        (3, 'me_defend_2', 'call'):'v17_us_play_me_defend_2', 
+                        (2, 'me_defend_2', 'call'):'v17_us_play_me_defend_2', 
+                        (1, 'me_defend_2', 'call'):'v17_us_play_me_defend_2', 
+                        (0, 'win', 'jump'):'v17_us_play_win', 
+                        (0, 'fail', 'jump'):'v17_us_play_fail', 
+                        (0, 'draw', 'jump'):'v17_us_play_draw'
                     }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUs(us_avatar_set, u"Ульяна")
     jump cards_gameloop
 
 
-label us_play_me_defend_2:
+label v17_us_play_me_defend_2:
     $ show_cards()
     window show
     us "Эй, не мешай карты – это меня путает!"
@@ -2053,18 +2053,18 @@ label us_play_me_defend_2:
     window hide
     return
 
-label us_play_fail:
+label v17_us_play_fail:
     $ day2_card_result = 1
-    jump day2_main3
+    jump v17_day2_main3
 
-label us_play_draw:
+label v17_us_play_draw:
     $ show_cards()
     window show
     el "Ничья! Играйте еще раз."
     window hide
-    jump us_play
+    jump v17_us_play
 
-label us_play_win:
+label v17_us_play_win:
 
     $ persistent.sprite_time = 'day'
     scene bg int_dining_hall_day 
@@ -2101,29 +2101,30 @@ label us_play_win:
     hide us  with dissolve
     window hide
 
-label us2_play:
+label v17_us2_play:
     python:
         dialogs = {
-                        (0, 'win', 'jump'):'us2_play_win', 
-                        (0, 'fail', 'jump'):'us2_play_fail', 
-                        (0, 'draw', 'jump'):'us2_play_draw'
+                        (0, 'win', 'jump'):'v17_us2_play_win', 
+                        (0, 'fail', 'jump'):'v17_us2_play_fail', 
+                        (0, 'draw', 'jump'):'v17_us2_play_draw'
                     }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalUs(us_avatar_set, u"Ульяна II")
     jump cards_gameloop
 
-label us2_play_fail:
-    $ day2_card_result = 1
-    jump day2_main3
 
-label us2_play_draw:
+label v17_us2_play_fail:
+    $ day2_card_result = 1
+    jump v17_day2_main3
+
+label v17_us2_play_draw:
     $ show_cards()
     window show
     el "Ничья! Играйте еще раз."
     window hide
-    jump us2_play
+    jump v17_us2_play
 
-label us2_play_win:
+label v17_us2_play_win:
 
     $ persistent.sprite_time = 'day'
     scene bg int_dining_hall_day 
@@ -2141,6 +2142,7 @@ label us2_play_win:
     "Я внимательно посмотрел в сторону Электроника и схемы турнира, пытаясь установить, кто же мне достался в соперники по финалу."
     show dv normal pioneer at center   with dissolve
     "В ту же секунду ко мне за стол села Алиса."
+    
     if day2_dv_bet == 0:
         show dv angry pioneer at center   with dspr
         dv "Ты еще пожалеешь, что струсил."
@@ -2154,33 +2156,33 @@ label us2_play_win:
     hide dv  with dissolve
     window hide
 
-    jump dv_play
+    jump v17_dv_play
 
-label dv_play:
+label v17_dv_play:
     python:
         dialogs = {
-                        (0, 'win', 'jump'):'dv_play_win', 
-                        (0, 'fail', 'jump'):'dv_play_fail', 
-                        (0, 'draw', 'jump'):'dv_play_draw'
+                        (0, 'win', 'jump'):'v17_dv_play_win', 
+                        (0, 'fail', 'jump'):'v17_dv_play_fail', 
+                        (0, 'draw', 'jump'):'v17_dv_play_draw'
                     }
         generate_cards('bg hall', dialogs)
         rival = CardGameRivalDv(dv_avatar_set, u"Алиса")
     jump cards_gameloop
 
-label dv_play_draw:
+label v17_dv_play_draw:
     $ show_cards()
     window show
     el "Ничья! Играйте еще раз."
     window hide
-    jump dv_play
+    jump v17_dv_play
 
-label dv_play_fail:
+label v17_dv_play_fail:
     $ day2_card_result = 2
-    jump day2_main3
+    jump v17_day2_main3
 
-label dv_play_win:
+label v17_dv_play_win:
     $ day2_card_result = 3
-    jump day2_main3
+    jump v17_day2_main3
 
 
 
@@ -2188,7 +2190,7 @@ label dv_play_win:
 
 
 
-label day2_main3:
+label v17_day2_main3:
 
     if day2_card_result == 0:
 
@@ -2212,14 +2214,14 @@ label day2_main3:
         th "И это плохо. Очень, очень плохо."
         th "Если она действительно всем расскажет этот бред..."
         th "И почему я так уверен, что поверят наверняка ей, а не мне."
-        "Я даже не знал точно почему, но был в этом уверен на 100%."
+        "Я даже не знал точно почему, но был в этом уверен на 100\%."
         window hide
         pass
 
     if day2_card_result == 3:
         if day2_dv_bet == 1:
             $ lp_dv = (lp_dv) + (2)
-            jump day2_dv
+            jump v17_day2_dv
         else:
             window show
             th "И неважно, что я не стал спорить с Алисой, главное – выиграл."
@@ -2247,16 +2249,16 @@ label day2_main3:
     stop ambience fadeout 3
 
     $ disable_all_zones()
-    $ set_zone('medic_house', 'day2_aidpost_eve')
-    $ set_zone('square', 'day2_square_eve')
-    $ set_zone('beach', 'day2_beach_eve')
-    $ set_zone('boat_station', 'day2_dock_eve')
-    $ set_zone('camp_entrance', 'day2_busstop_eve')
-    $ set_zone('estrade', 'day2_stage_eve')
-    $ set_zone('sport_area', 'day2_football_eve')
+    $ set_zone('medic_house', 'v17_day2_aidpost_eve')
+    $ set_zone('square', 'v17_day2_square_eve')
+    $ set_zone('beach', 'v17_day2_beach_eve')
+    $ set_zone('boat_station', 'v17_day2_dock_eve')
+    $ set_zone('camp_entrance', 'v17_day2_busstop_eve')
+    $ set_zone('estrade', 'v17_day2_stage_eve')
+    $ set_zone('sport_area', 'v17_day2_football_eve')
     $ show_map()
 
-label day2_aidpost_eve:
+label v17_day2_aidpost_eve:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_aidpost_night 
@@ -2268,9 +2270,9 @@ label day2_aidpost_eve:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_square_eve:
+label v17_day2_square_eve:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_square_night 
@@ -2282,9 +2284,9 @@ label day2_square_eve:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_beach_eve:
+label v17_day2_beach_eve:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_beach_night 
@@ -2300,9 +2302,9 @@ label day2_beach_eve:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_dock_eve:
+label v17_day2_dock_eve:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_boathouse_night 
@@ -2315,9 +2317,9 @@ label day2_dock_eve:
     "Я медленно побрел назад, погруженный в свои мысли."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_busstop_eve:
+label v17_day2_busstop_eve:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_square_night 
@@ -2358,7 +2360,7 @@ label day2_busstop_eve:
 
     if day2_cards_with_sl == 1:
         $ lp_sl = (lp_sl) + (1)
-        jump day2_sl
+        jump v17_day2_sl
 
     stop ambience fadeout 2
 
@@ -2366,13 +2368,13 @@ label day2_busstop_eve:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_stage_eve:
+label v17_day2_stage_eve:
 
     if day2_card_result == 1:
         $ lp_us = (lp_us) + (1)
-        jump day2_us
+        jump v17_day2_us
 
     scene black 
     with dissolve
@@ -2402,13 +2404,13 @@ label day2_stage_eve:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_football_eve:
+label v17_day2_football_eve:
 
     if day2_card_result == 0 and day2_dv_bet == 0:
         $ lp_un = (lp_un) + (1)
-        jump day2_un
+        jump v17_day2_un
 
     $ persistent.sprite_time = 'night'
     scene bg ext_playground_night 
@@ -2419,9 +2421,9 @@ label day2_football_eve:
     "..."
     window show
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_dv:
+label v17_day2_dv:
 
     scene cg lvl_4_semen_win 
     with dissolve
@@ -2456,7 +2458,7 @@ label day2_dv:
 
     play music music_list["that_s_our_madhouse"] fadein 3
 
-    scene bg ext_beach_night :
+    scene bg ext_beach_night:
         linear 0.05 pos (-5,-5)
         linear 0.05 pos (0,0)
         linear 0.05 pos (5,5)
@@ -2464,7 +2466,6 @@ label day2_dv:
         linear 0.05 pos (5,0)
         linear 0.05 pos (0,0)
         repeat
-        
     window hide
 
     play sound sfx_shoulder_dive_water
@@ -2520,11 +2521,10 @@ label day2_dv:
     dv "Походу ты не такой уж и неудачник…"
     window hide
 
-    scene cg d2_2ch_beach  with dissolve:
+    scene cg d2_2ch_beach with dissolve:
         pos (0,-1920)
         linear 10.0 pos (0,0)
         linear 2.0 pos (0, -250)
-        
     window show
     "Ей все же удалось меня чуть удивить. Повернув голову в ее сторону, я обнаружил, что Алиса была одета в великолепно сидящий на ней оранжевый купальник, чертовски хорошо подчеркивающий ее природные данные."
     me "С чего это я неудачник?"
@@ -2623,9 +2623,9 @@ label day2_dv:
     "Я направился к домику Ольги Дмитриевны."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_sl:
+label v17_day2_sl:
 
     "Я уже собирался возвращаться в лагерь, как вдруг услышал звук шагов за воротами."
     th "И кого еще принесло?.."
@@ -2745,9 +2745,9 @@ label day2_sl:
     "Вскоре меня начало клонить в сон."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_un:
+label v17_day2_un:
 
     $ day2_un = 1
 
@@ -2880,9 +2880,9 @@ label day2_un:
     "..."
     window hide
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_us:
+label v17_day2_us:
 
     scene black 
     with dissolve
@@ -2935,7 +2935,7 @@ label day2_us:
     "Я беспомощно вздохнул. Оправдываться было бесполезно."
     me "Сама все видела."
     "Выдавил я и смущенно отвернулся."
-    show us laugh2 pioneer  with dspr:
+    show us laugh2 pioneer  with dissolve:
         xalign 0.5
         yanchor 0.116
         rotate 180
@@ -3017,9 +3017,9 @@ label day2_us:
 
     stop ambience fadeout 2
 
-    jump day2_main4
+    jump v17_day2_main4
 
-label day2_main4:
+label v17_day2_main4:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_house_of_mt_night_without_light 
@@ -3056,4 +3056,4 @@ label day2_main4:
 
     $ renpy.pause(3)
 
-    jump day3_main1
+    jump v17_day3_main1

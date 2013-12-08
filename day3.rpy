@@ -1,4 +1,4 @@
-﻿init:
+﻿init 2:
     $ day3_breakfast_with_un = 0
     $ day3_un_help_accept = 0
     $ day3_house_of_mt = 0
@@ -15,8 +15,9 @@
     $ day3_dv_dumped = False
     $ day3_un_dumped = False
     $ d3_volume = 0
+    $ set_name('me',u"Семён")
 
-label day3_main1:
+label v17_day3_main1:
 
     $ backdrop = 'days'
 
@@ -112,11 +113,11 @@ label day3_main1:
         "Извини, я хотел с Леной поговорить":
             $ day3_breakfast_with_un = 1
             $ lp_un = (lp_un) + (1)
-            jump day3_breakfast_un
+            jump v17_day3_breakfast_un
         "Ладно, подожди минутку":
-            jump day3_breakfast_mz
+            jump v17_day3_breakfast_mz
 
-label day3_breakfast_un:
+label v17_day3_breakfast_un:
 
     window show
     "Решив не упускать лишний шанс поболтать с Леной, я направился к ее столику."
@@ -190,9 +191,9 @@ label day3_breakfast_un:
 
     $ renpy.pause(1)
 
-    jump day3_main2
+    jump v17_day3_main2
 
-label day3_breakfast_mz:
+label v17_day3_breakfast_mz:
 
     window show
     "В конце концов, не стоило лишний раз смущать Лену."
@@ -251,9 +252,9 @@ label day3_breakfast_mz:
 
     $ renpy.pause(1)
 
-    jump day3_main2
+    jump v17_day3_main2
 
-label day3_main2:
+label v17_day3_main2:
 
     window show
     "Я лениво дожевывал еду, погруженный в свои размышления."
@@ -397,13 +398,13 @@ label day3_main2:
         "Хорошо, я приду...":
             $ day3_un_help_accept = 1
             $ lp_un = (lp_un) + (1)
-            jump day3_helpaccept
+            jump v17_day3_helpaccept
         "Простите, но у меня уже были другие планы на вечер...":
-            jump day3_helpreject
+            jump v17_day3_helpreject
 
-    jump day3_main3
+    jump v17_day3_main3
 
-label day3_helpaccept:
+label v17_day3_helpaccept:
 
     window show
     cs "Вот и славно!{w} Так и должен отвечать настоящий пионер!"
@@ -416,7 +417,7 @@ label day3_helpaccept:
     play music music_list["timid_girl"] fadein 5
 
     hide cs  with dissolve
-    show un shy pioneer at left :
+    show un shy pioneer at left:
         linear 1.0 xalign 0.5
     "Я перевел взгляд на Лену, которая все так же сосредоточенно смотрела себе под ноги."
     "Мы молча пошли по дороге прочь от медпункта."
@@ -451,9 +452,9 @@ label day3_helpaccept:
 
     "Лена направилась в сторону кружков, а я еще некоторое время просто стоял на площади."
 
-    jump day3_main3
+    jump v17_day3_main3
 
-label day3_helpreject:
+label v17_day3_helpreject:
 
     play music music_list["you_won_t_let_me_down"] fadein 5
 
@@ -491,9 +492,9 @@ label day3_helpreject:
     window show
     "Присев на лавке возле памятника, я стал обдумывать свой план действий на сегодня."
 
-    jump day3_main3
+    jump v17_day3_main3
 
-label day3_main3:
+label v17_day3_main3:
 
     "Сюда все же кто-то приезжает. Райцентр...если задуматься, ничего необычного."
     "Но тогда почему все так настойчиво пытаются от меня скрыть даже самые невинные детали?"
@@ -516,16 +517,16 @@ label day3_main3:
         "Стоит пойти посмотреть":
             $ lp_dv = (lp_dv) + (1)
             stop music fadeout 2
-            jump day3_stage_dv
+            jump v17_day3_stage_dv
         "Какая разница? Меня это слабо касается":
             $ day3_house_of_mt = 1
             window show
             "Я здраво рассудил, что навряд ли это что-то интересное."
             window hide
             stop music fadeout 2
-            jump day3_house_of_mt
+            jump v17_day3_house_of_mt
 
-label day3_house_of_mt:
+label v17_day3_house_of_mt:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_path_day 
@@ -596,15 +597,15 @@ label day3_house_of_mt:
         "Пожалуй, я помогу Славе":
             $ day3_sl_cleaned = 1
             $ lp_sl = (lp_sl) + (1)
-            jump day3_square
+            jump v17_day3_square
         "Думаю, помогу ребятам в постройке роботов":
-            jump day3_clubs
+            jump v17_day3_clubs
         "Ладно, я помогу спортивному клубу":
             $ day3_us_football = 1
             $ lp_us = (lp_us) + (1)
-            jump day3_playground_us
+            jump v17_day3_playground_us
 
-label day3_square:
+label v17_day3_square:
 
     window show
     "Настало время отплатить Славе за ее доброту."
@@ -691,9 +692,9 @@ label day3_square:
     "Заиграла музыка, знаменующая наступление обеда. Я задумчиво почесав живот, не мешкая направился в сторону столовой."
     window hide
 
-    jump day3_main4
+    jump v17_day3_main4
 
-label day3_clubs:
+label v17_day3_clubs:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_clubs_day 
@@ -805,9 +806,9 @@ label day3_clubs:
     "Затем я отправился к зданию столовой."
     window hide
 
-    jump day3_main4
+    jump v17_day3_main4
 
-label day3_playground_us:
+label v17_day3_playground_us:
 
     window show
     "Помочь спортивному клубу казалось мне наилучшей идеей."
@@ -953,9 +954,9 @@ label day3_playground_us:
     "Пожалуй, мне стоило последовать ее примеру."
     window hide
 
-    jump day3_main4
+    jump v17_day3_main4
 
-label day3_stage_dv:
+label v17_day3_stage_dv:
 
     $ persistent.sprite_time = 'day'
     scene bg ext_stage_normal_day 
@@ -1082,9 +1083,9 @@ label day3_stage_dv:
     "Я побрел в столовую в одиночестве."
     window hide
 
-    jump day3_main4
+    jump v17_day3_main4
 
-label day3_main4:
+label v17_day3_main4:
 
     scene bg black 
     with dissolve
@@ -1216,7 +1217,7 @@ label day3_main4:
     show mt rage pioneer at right   with dspr
     mt "И кто теперь все это должен убирать?!"
     "Не то, чтобы у меня не было предположений..."
-    show us surp3 sport at center   with dspr:
+    show us surp3 sport at center  with dspr:
         linear 0.2 xalign 0.4
         linear 0.2 xalign 0.5
     us "Он!"
@@ -1229,7 +1230,7 @@ label day3_main4:
     mt "Семен, принеси швабры и совки из кладовки. Ульяна!"
     show mt rage pioneer at right   with dspr
     "Вожатая посмотрела на Ульяну таким взглядом, что на секунду мне даже стало ее жаль."
-    show us fear sport at center   with dspr:
+    show us fear sport at center  with dspr:
         parallel:
             linear 0.5 yalign -0.2
         parallel:
@@ -1251,13 +1252,13 @@ label day3_main4:
         "Сбежать":
             $ day3_sl_library = 1
             $ lp_sl = (lp_sl) + (1)
-            jump day3_library_sl
+            jump v17_day3_library_sl
         "Остаться и помочь Ульяне убраться":
             $ day3_us_cleaned = 1
             $ lp_us = (lp_us) + (1)
-            jump day3_cleaning_us
+            jump v17_day3_cleaning_us
 
-label day3_library_sl:
+label v17_day3_library_sl:
 
     window show
     "Да будет так."
@@ -1510,9 +1511,9 @@ label day3_library_sl:
     "Я не знал сидящих рядом со Славей девчонок, да и боялся показаться бестактным."
     "Так что я начал оглядываться в поиске свободных мест."
 
-    jump day3_main5
+    jump v17_day3_main5
 
-label day3_cleaning_us:
+label v17_day3_cleaning_us:
 
     window show
     th "Как бы то ни было, я тоже частично виноват в произошедшем."
@@ -1799,9 +1800,9 @@ label day3_cleaning_us:
     hide sl  with dissolve
     "Поблагодарив ее, я оглянулся в поисках свободного места."
 
-    jump day3_main5
+    jump v17_day3_main5
 
-label day3_main5:
+label v17_day3_main5:
 
     "Я решил сесть с Электроником и Шуриком."
     show el normal pioneer at cleft 
@@ -1936,7 +1937,7 @@ label day3_main5:
 
                     stop ambience fadeout 2
 
-                    jump day3_evening_dv
+                    jump v17_day3_evening_dv
                 "Пойти на дискотеку":
                     $ day3_dv_dumped = True
                     $ lp_dv = (lp_dv) - (5)
@@ -1945,7 +1946,7 @@ label day3_main5:
 
             stop ambience fadeout 2
 
-            jump day3_evening_dv
+            jump v17_day3_evening_dv
 
     else:
         window show
@@ -2048,19 +2049,19 @@ label day3_main5:
     sl "Вот как?"
 
     if day3_un_help_accept == 1:
-        jump day3_evening_un
+        jump v17_day3_evening_un
 
     elif day3_sl_library == 1 and day3_sl_cleaned == 1:
-        jump day3_evening_sl
+        jump v17_day3_evening_sl
 
     elif day3_us_cleaned == 1 and day3_us_football == 1:
-        jump day3_evening_us
+        jump v17_day3_evening_us
 
     else:
         $ day3_got_fail = 1
-        jump day3_fail
+        jump v17_day3_fail
 
-label day3_evening_sl:
+label v17_day3_evening_sl:
 
     $ day3_sl_evening = 1
 
@@ -2379,9 +2380,9 @@ label day3_evening_sl:
 
     $ renpy.pause(3)
 
-    jump day4_std_morning
+    return
 
-label day3_evening_un:
+label v17_day3_evening_un:
 
     $ day3_un_evening = 1
 
@@ -2746,9 +2747,9 @@ label day3_evening_un:
 
     $ renpy.pause(3)
 
-    jump day4_std_morning
+    return
 
-label day3_evening_us:
+label v17_day3_evening_us:
 
     $ day3_us_evening = 1
 
@@ -3073,9 +3074,9 @@ label day3_evening_us:
 
     $ renpy.pause(3)
 
-    jump day4_us_morning
+    return
 
-label day3_evening_dv:
+label v17_day3_evening_dv:
 
     $ day3_dv_evening = 1
 
@@ -3391,9 +3392,9 @@ label day3_evening_dv:
 
     $ renpy.pause(3)
 
-    jump day4_std_morning
+    return
 
-label day3_fail:
+label v17_day3_fail:
 
     hide sl  with dissolve
     "Пожав плечами, Славя вернулась к танцующим."
@@ -3487,7 +3488,7 @@ label day3_fail:
             "Электроник щедро вручил мне добрую половину своих сокровищ."
             "Мы, то и дело подозрительно оглядываясь, пошли к лагерю."
             window hide
-            jump day3_alive
+            jump v17_day3_alive
 
         "Я...я еще прогуляюсь немного":
             sh "Ну как знаешь... Ты...это...{w} только осторожнее, хорошо? Ночь все-таки."
@@ -3495,9 +3496,9 @@ label day3_fail:
             el "Увидимся!"
             sh "Спокойной ночи."
             window hide
-            jump day3_dead
+            jump v17_day3_dead
     
-label day3_dead:
+label v17_day3_dead:
 
     window show
     
@@ -3565,7 +3566,7 @@ label day3_dead:
     jump final_credits
 
 
-label day3_alive:
+label v17_day3_alive:
 
     $ persistent.sprite_time = 'night'
     scene bg ext_clubs_night 
@@ -3592,4 +3593,4 @@ label day3_alive:
 
     $ renpy.pause(3)
 
-    jump day4_fail_morning
+    return
