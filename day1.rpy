@@ -1012,7 +1012,7 @@ label v17_day1_camp_walk:
                         "Она круто развернулась и ушла в столовую."
                         hide dv  with dissolve
                         th "Как быстро она перестала злиться, сразу после возникшей перспективы снова показать своё превосходство...{w} Нет, всё прямо как в детстве."
-                        jump v17_d1_free_time
+                        jump d1_free_time
                     "Соврать":
                         init:
                             $ d1_kr_hate_raised = True #TODO Этот ответ прибавит шанс на бэд-энд с Криппи-тян. Ложь действует на личность Алисы в виде Криппи как стресс. Навеяно анимцой Бакемоногатари.
@@ -1025,7 +1025,7 @@ label v17_day1_camp_walk:
                         "Она ушла, оборвав разговор на печальной ноте."
                         "Не знаю, надо ли жалеть об этом. Наверно, мы просто не из тех, кто может легко ужиться между собой."
                         th "К чему мысли об этом?{w} Ни с кем уживаться я не собирался. Чем раньше свалю отсюда, тем лучше."
-                        jump v17_d1_free_time
+                        jump d1_free_time
             dv "А с тобой я ещё поговорю!"
             me "М-м... Просто не забудь в следующий раз рубашку заправить, тогда, может быть, обосрамс не повторится."
             show dv shy pioneer2 at left   with dissolve
@@ -1063,7 +1063,7 @@ label v17_day1_camp_walk:
 
             hide dv  with dissolve
 
-label v17_d1_free_time:
+label d1_free_time:
 
     "..." #TODO Нейтральный ивент. Возможно, свободное перемещение по карте.
     window hide
@@ -1098,15 +1098,15 @@ label v17_d1_free_time:
         "Мрачно сказал я."
         us "А я Ульяна!"
         $ meet('us', u"Ульяна")
-        jump v17_d1_us_dialogue_part2
+        jump d1_us_dialogue_part2
     th "Девочка...{w} Ульяна!"
     th "Ну, этого стоило ожидать."
     "Я стоял достаточно далеко от поля, но Ульяна всё же заметила меня."
     show us laugh sport far at center    with dissolve   
     us "Эй, ты!"
-    jump v17_d1_us_dialogue_part2
+    jump d1_us_dialogue_part2
     
-label v17_d1_us_dialogue_part2:
+label d1_us_dialogue_part2:
 
     us "Играть будешь?"
     "Я не знал, что ответить."
@@ -1512,11 +1512,11 @@ label v17_d1_us_dialogue_part2:
     me "Ну, я даже не знаю..."
     if d1_dv_punishment:
         th "Так себе денёк. Не из приятных."
-        jump v17_d1_sl_dialogue_part2
+        jump d1_sl_dialogue_part2
     th "Сегодняшний день не был шибко плохим. На самом деле, всё происходящее вокруг меня...{w} радовало?"
-    jump v17_d1_sl_dialogue_part2
+    jump d1_sl_dialogue_part2
 
-label v17_d1_sl_dialogue_part2:   
+label d1_sl_dialogue_part2:   
     sl "Ничего, скоро привыкнешь!"
 
     show cg d1_sl_dinner  with dspr
