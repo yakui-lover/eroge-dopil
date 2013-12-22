@@ -1,4 +1,4 @@
-
+﻿
 init -1000 python:
     config_session = False
     def get_image(file):

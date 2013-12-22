@@ -1,4 +1,4 @@
-init:
+﻿init:
     $ prologue = 0
 
 label prologue:

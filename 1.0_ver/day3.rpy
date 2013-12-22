@@ -1,4 +1,4 @@
-init:
+﻿init:
     $ day3_breakfast_with_un = 0
     $ day3_un_help_accept = 0
     $ day3_house_of_mt = 0

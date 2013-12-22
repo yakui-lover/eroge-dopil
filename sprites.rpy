@@ -1,4 +1,4 @@
-init:
+﻿init:
     image cs normal stethoscope far = ConditionSwitch(
     "persistent.sprite_time=='sunset'",im.MatrixColor( im.Composite((630,1080), (0,0), "images/1080/sprites/far/cs/cs_1_body.png",(0,0), "images/1080/sprites/far/cs/cs_1_stethoscope.png",(0,0), "images/1080/sprites/far/cs/cs_1_normal.png"), im.matrix.tint(0.94, 0.82, 1.0) ),
     "persistent.sprite_time=='night'",im.MatrixColor( im.Composite((630,1080), (0,0), "images/1080/sprites/far/cs/cs_1_body.png",(0,0), "images/1080/sprites/far/cs/cs_1_stethoscope.png",(0,0), "images/1080/sprites/far/cs/cs_1_normal.png"), im.matrix.tint(0.63, 0.78, 0.82) ),
