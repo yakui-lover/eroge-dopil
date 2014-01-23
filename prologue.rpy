@@ -1,5 +1,5 @@
 ﻿init python:
-    mods["v17_prologue"] = u"Где мои семнадцать лет?"
+    mods["v17__prologue"] = u"Где мои семнадцать лет?"
 
 init:
     $ prologue = 0
