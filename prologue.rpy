@@ -1,5 +1,5 @@
-init python:
-    mods["pl_prologue"] = u"На 95% меньше Риточки и на 15% больше доскошуток."
+﻿init python:
+    mods["princess_lover__prologue"] = u"На 95% меньше Риточки и на 15% больше доскошуток."
 
 init:
     $ prologue = 0
