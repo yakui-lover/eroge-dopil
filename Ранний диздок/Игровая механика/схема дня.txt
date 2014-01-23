@@ -1,0 +1,48 @@
+﻿intro:
+
+
+
+choice: good / bad / neutral
+block1
+
+good
+	bad
+	neutral
+
+
+	
+	
+
+daybreak1:
+
+
+
+choice: good / bad /neutral
+block2
+
+good
+	bad
+	neutral
+
+
+	
+	
+
+choice: славя / унылка
+	choice: ссср / дваче
+	choice: мод-тян / сыроега (лол)
+
+daybreak2:
+
+
+
+event:
+
+
+
+slot:
+
+
+
+
+
