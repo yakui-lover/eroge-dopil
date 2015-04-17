@@ -7,7 +7,7 @@ init 2:
     $ d1_river_flag = False
     $ d1_genda_flag = False
     $ d1_road_decision = False
-    $ d1_supper_with_ug = Falsre
+    $ d1_supper_with_ug = False
     $ d1_supper_with_mz = False
     $ d1_dv_evening = False
     $ d1_un_evening = False
