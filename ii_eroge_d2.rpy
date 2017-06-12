@@ -1072,7 +1072,7 @@ label d2_clubs_common_event:
 label d2_morning_map_prep:
     
     $ disable_all_zones()
-
+    $ init_map_zones()
     $ set_zone('music_club', 'd2_event_mus_club')
     $ set_chibi("music_club",  "?")
     $ set_zone('clubs', 'd2_event_clubs')
@@ -9739,7 +9739,7 @@ label d2_skip_common_event:
         th "Кроме Угрюмого, конечно."
         "Но сейчас я не собирался искать его."
     "Я загорелся идеей наведаться куда-нибудь, где ещё не бывал — в лагере или за его пределами."
-    if (d2_day_us == False):
+    if (d2_us_dv_day == False):
         if (d2_met_ld == True) or (d2_dv_fight == False):
             "Например, я не видел здешнюю баню."
             "Не то чтобы она должна была поразить моё воображение, просто хотелось побольше разузнать о месте, куда я попал."
